@@ -2,4 +2,4 @@ streaming/music/*
 streaming/package-lock.json
 streaming/node_modules
 
-ios_music_streaming/ios_music_streaming.xcodeproj/xcuserdata
+ios_music_streaming/ios_music_streaming.xcodeproj/xcuserdata/
