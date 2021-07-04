@@ -14,10 +14,7 @@ struct MainPage: View {
                 .padding()
                 .frame(maxWidth:.infinity, maxHeight: .infinity)
             Spacer()
-            Text("player")
-                .padding()
-                .frame(maxWidth:.infinity)
-                .background(Color(ColorComponents.playerBackgroudColor))
+            MusicPlayer()
             Divider()
             MenuBar()
         }
