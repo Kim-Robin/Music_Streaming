@@ -2,27 +2,32 @@
 //  MusicPlayer.swift
 //  ios_music_streaming
 //
-//  Created by Robin Kim on 7/3/21.
+//  Created by Robin Kim on 7/4/21.
 //
 
 import SwiftUI
 
 struct MusicPlayer: View {
+//    @Binding var isNavBarHidden: Bool
     var body: some View {
-        HStack{
+       VStack(alignment: .leading, spacing: 0){
             Text("album")
                 .padding()
-            Text("Title..................")
-                .padding()
             Spacer()
-            Text("Play")
+            Text("title")
                 .padding()
-            Text("Next")
+            Text("album")
                 .padding()
         }
-        .frame(maxWidth:.infinity)
-
-        .background(Color(ColorComponents.playerBackgroudColor))
+        .frame(
+            minWidth: 0,
+            maxWidth: .infinity,
+            minHeight: 0,
+            maxHeight: .infinity,
+            alignment: .topLeading
+        )
+       .background(Color(.blue))
+        
     }
 }
 

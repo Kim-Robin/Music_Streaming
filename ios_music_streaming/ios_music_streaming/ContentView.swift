@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+//    @State var isNavBarHidden: Bool = true
+    
     var body: some View {
-        ZStack{
-            Color(ColorComponents.backgroundColor).ignoresSafeArea()
-            MainPage()
-            
+        NavigationView{
+            ZStack{
+                Color(ColorComponents.backgroundColor).ignoresSafeArea()
+                MainPage()
+//                    .navigationBarHidden(isNavBarHidden)
+            }
         }
     }
 }
