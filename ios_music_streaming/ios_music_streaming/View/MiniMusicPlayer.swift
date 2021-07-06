@@ -12,45 +12,43 @@ struct MiniMusicPlayer: View {
 //    @Binding var isNavBarHidden: Bool
     
     var body: some View {
-        HStack{
-            NavigationLink(destination: MusicPlayer()){
-                        Image(systemName: "person.crop.square.fill")
-                            .font(.system(size: 58))
-                            .foregroundColor(.white)
-                            
-                        Text("Title..........")
-                            .font(.system(size: 25))
-                            
-                    }
-            Spacer()
-            Button(action: {
-                print("play")
-            }, label: {
-                Image(systemName: "play.fill")
-                    .font(.system(size: 36))
-                    .foregroundColor(.white)
-                    
-            })
-            .padding()
-            Button(action: {
-                print("next")
-            }, label: {
-                HStack(spacing: -5){
-                    Image(systemName: "play.fill")
-                        .font(.system(size: 33))
-                        .foregroundColor(.white)
-                    Image(systemName: "play.fill")
-                        .font(.system(size: 33))
-                        .foregroundColor(.white)
-                }
+        VStack{
+            HStack(spacing: 15){
+                Image(systemName: "person.crop.square.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 55, height: 55)
+                    .cornerRadius(15)
+                Text("test music")
+                    .font(.title2)
+                    .fontWeight(.bold)
                 
-                    
-            })
+                Spacer()
+                
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Image(systemName: "play.fill")
+                        .font(.title2)
+                        .foregroundColor(.primary)
+                })
+                
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Image(systemName: "forward.fill")
+                        .font(.title2)
+                        .foregroundColor(.primary)
+                })
+            }
             .padding()
         }
-        .frame(maxWidth:.infinity)
-
-        .background(Color(ColorComponents.playerBackgroudColor))
+        .frame(height: 80)
+        //Moving the player above the tabbar
+        //menu bar height is 49
+        .background(
+            VStack(spacing: 0){
+                BlurView()
+                Divider()
+            }
+        )
+        .offset(y: -48)
     }
 }
 

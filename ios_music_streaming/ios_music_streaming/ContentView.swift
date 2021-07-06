@@ -11,13 +11,12 @@ struct ContentView: View {
 //    @State var isNavBarHidden: Bool = true
     
     var body: some View {
-        NavigationView{
-            ZStack{
-                Color(ColorComponents.backgroundColor).ignoresSafeArea()
-                MainPage()
-//                    .navigationBarHidden(isNavBarHidden)
-            }
-        }
+      
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom), content: {
+            MenuBar()
+            MiniMusicPlayer()
+        })
+        
     }
 }
 
