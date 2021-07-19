@@ -13,6 +13,11 @@ struct MenuBar: View{
     @State var current = 0
     let list = ["Library", "Search", "Radio"]
     
+    // Miniplayer Properties...
+    @State var expand = false
+    
+    @Namespace var animation
+    
     var body: some View{
         
         TabView(selection: $current){
@@ -22,7 +27,7 @@ struct MenuBar: View{
                     Image(systemName: "rectangle.stack.fill")
                     Text(list[0])
                 }
-            Text(list[1])
+            Search()
                 .tag(1)
                 .tabItem{
                     Image(systemName: "magnifyingglass")
@@ -35,6 +40,8 @@ struct MenuBar: View{
                     Text(list[2])
                 }
         }
+        
+        MiniMusicPlayer(animation: animation, expand: $expand)
 //        HStack(alignment: .top){
 //            ForEach(list, id: \.self){ i in
 //                Text(i)
