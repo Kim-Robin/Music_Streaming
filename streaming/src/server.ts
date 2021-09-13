@@ -49,6 +49,25 @@ app.get("/music", (req, res) => {
 
 });
 
+app.get("/music/:artist/:song",(req,res) =>{
+    console.log(req.headers);
+    console.log(typeof req.params.artist);
+    console.log(typeof req.params.song);
+
+    const artist = req.params.artist.replace(" ", "_");
+    const song = req.params.song.replace(" ", "_");
+
+    console.log(artist);
+
+    const range: string | undefined = req.headers.range;
+    if(range === undefined){
+        res.status(400).send("requires Range header");
+    }else{
+        let dir = __dirname;
+        let location = dir.slice(0,-3) + `music/${artist}/${song}.mp3`;
+    }
+});
+
 
 app.listen(PORT, ()=>{
     console.log("Music Streaming server is running on https://localhost:" + PORT);
