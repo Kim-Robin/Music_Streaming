@@ -64,7 +64,8 @@ app.get("/music/:artist/:song",(req,res) =>{
         res.status(400).send("requires Range header");
     }else{
         let dir = __dirname;
-        let location = dir.slice(0,-3) + `music/${artist}/${song}.mp3`;
+        const location = dir.slice(0,-3) + `music/${artist}/${song}.mp3`;
+        const musicSize = fs.statSync(location).size;
     }
 });
 
