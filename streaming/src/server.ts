@@ -54,8 +54,8 @@ app.get("/music/:artist/:song",(req,res) =>{
     console.log(typeof req.params.artist);
     console.log(typeof req.params.song);
 
-    const artist = req.params.artist.replace(" ", "_");
-    const song = req.params.song.replace(" ", "_");
+    const artist = req.params.artist.replace(/ /g, "_");
+    const song = req.params.song.replace(/ /g, "_");
 
     console.log(artist);
 
@@ -66,6 +66,27 @@ app.get("/music/:artist/:song",(req,res) =>{
         let dir = __dirname;
         const location = dir.slice(0,-3) + `music/${artist}/${song}.mp3`;
         const musicSize = fs.statSync(location).size;
+
+        const CHUNK_SIZE = 10 ** 6; // 1mb
+       
+        const start = Number(range.replace(/\D/g, ""));
+        const end = Math.min(start + CHUNK_SIZE, musicSize -1);
+
+        const contentLength = end-start + 1;
+
+        const headers = {
+            "Content-Range": `bytes ${start}-${end}/${musicSize}`,
+            "Accept-Ranges": "bytes",
+        //    "Content-Length": contentLength,
+            "Content-Length" : contentLength,
+            "Content-Type": "audio/mpeg"
+        };
+
+        res.writeHead(206, headers);
+
+        let musicStream = fs.createReadStream(location,{start, end});
+
+        musicStream.pipe(res);
     }
 });
 
