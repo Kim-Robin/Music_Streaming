@@ -1,9 +1,15 @@
 **/.DS_Store
 
+./web_music_streaming/build
+web_music_streaming/node_modules
+web_music_streaming/package-lock.json
+
 
 streaming/music/*
 streaming/package-lock.json
 streaming/node_modules
+
+
 
 ios_music_streaming/.swiftpm
 .swiftpm
