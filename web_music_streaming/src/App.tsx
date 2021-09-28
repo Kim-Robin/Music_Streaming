@@ -1,20 +1,17 @@
 import './styles.css'
-import IMAGE from './react.png'
-import LOGO from './logo.svg'
-import { ClickCounter } from './ClickCounter'
+//import IMAGE from './react.png'
+//import LOGO from './logo.svg'
+//import { ClickCounter } from './ClickCounter'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import Home from './Components/Home'
 
 export const App = () => {
-  const name = 'Vishwas'
-
   return (
-    <>
-      <h1>
-        yo this React TypeScript Webpack Starter Template -{name}
-        {process.env.NODE_ENV} {process.env.name}
-      </h1>
-      <img src={IMAGE} alt="React Logo" width="300" height="300" />
-      <img src={LOGO} alt="React Logo" width="300" />
-      <ClickCounter />
-    </>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+      </Switch>
+    </Router>
   )
 }
