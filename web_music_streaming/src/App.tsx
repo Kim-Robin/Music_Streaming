@@ -1,4 +1,4 @@
-import './styles.css'
+import './Styles/styles.css'
 //import IMAGE from './react.png'
 //import LOGO from './logo.svg'
 //import { ClickCounter } from './ClickCounter'
