@@ -5,14 +5,14 @@ body {
 .project-wrapper {
   display: grid;
   grid-template-areas:
-    'navigation-box '
-    'music-player-box music-player-box music-player-box';
+    'nav-box main-view blank'
+    'music-player-bar music-player-bar music-player-bar';
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr auto;
-  height: 100%;
+  height: 100vh;
   min-height: 100%;
   width: 100%;
-  gap: 5px;
+  position: relative;
 }
 /*
 grid-template-areas:
@@ -22,14 +22,16 @@ grid-template-areas:
 
 /*header styling*/
 .navigation-box {
-  grid-column: 1/3;
-  grid-row: 1/10;
+  grid-area: nav-box;
   background-color: aqua;
   display: flex;
   width: 221px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 0;
+  z-index: 3;
+  position: relative;
 }
 
 .navigation-contents {
@@ -60,7 +62,24 @@ grid-template-areas:
   height: 30px;
 }
 
+/*top bar styling*/
+.top-bar {
+  grid-area: main-view;
+  min-width: 0;
+  height: 63px;
+  z-index: 2;
+}
+
+/*main view styling*/
+.home-box {
+  grid-area: main-view;
+  width: 100%;
+}
+
 /*footer styling*/
 .music-player-box {
-  display: flex;
+  background-color: rgba(23, 234, 78, 0.6);
+  grid-area: music-player-bar;
+  width: 100%;
+  z-index: 4;
 }

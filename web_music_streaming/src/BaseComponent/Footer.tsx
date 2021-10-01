@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer: React.FC = () => {
   return (
-    <div>
+    <div className="music-player-box">
       <h1>footer</h1>
     </div>
   )
