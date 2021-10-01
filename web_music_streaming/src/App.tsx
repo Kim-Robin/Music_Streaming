@@ -11,12 +11,14 @@ import Footer from './BaseComponent/Footer'
 
 export const App = () => {
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route path="/" exact component={Home} />
-      </Switch>
-      <Footer />
-    </Router>
+    <div className="project-wrapper">
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/" exact component={Home} />
+        </Switch>
+        <Footer />
+      </Router>
+    </div>
   )
 }
