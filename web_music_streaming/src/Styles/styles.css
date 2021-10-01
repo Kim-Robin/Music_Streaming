@@ -71,7 +71,7 @@ grid-template-areas:
 }
 
 /*main view styling*/
-.home-box {
+.main-box {
   grid-area: main-view;
   width: 100%;
 }

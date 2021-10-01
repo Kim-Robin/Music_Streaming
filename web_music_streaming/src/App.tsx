@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Home from './Components/Home'
 
+import Search from './Components/Search'
+
 import Header from './BaseComponent/Header'
 import Footer from './BaseComponent/Footer'
 
@@ -16,6 +18,7 @@ export const App = () => {
         <Header />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/search" exact component={Search} />
         </Switch>
         <Footer />
       </Router>
