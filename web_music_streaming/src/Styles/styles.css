@@ -34,7 +34,20 @@ grid-template-areas:
   position: relative;
 }
 
+.logo {
+  flex: 2;
+  width: 187px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-icon {
+  height: 46.85px;
+}
+
 .navigation-contents {
+  flex: 1;
   width: 187px;
   text-decoration: none;
   margin: 10px;
@@ -60,6 +73,11 @@ grid-template-areas:
 
 .nav-icon {
   height: 30px;
+}
+
+.playlist-box {
+  margin: 10px;
+  flex: 18;
 }
 
 /*top bar styling*/

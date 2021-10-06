@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import HOME from '../Images/home.png'
 import SEARCH from '../Images/search.png'
+import LOGO from '../Images/react.png'
 
 interface Hprops {
   content: {
@@ -37,9 +38,19 @@ const Header: React.FC = () => {
 
   return (
     <div className="navigation-box">
+      <LogoComponent />
       <NavComponent content={contentHome} />
       <NavComponent content={contentSearch} />
       <NavComponent content={contentLibrary} />
+      <UserArea />
+    </div>
+  )
+}
+
+const LogoComponent: React.FC = () => {
+  return (
+    <div className="logo">
+      <img src={LOGO} alt="logo" className="logo-icon" />
     </div>
   )
 }
@@ -52,6 +63,14 @@ const NavComponent: React.FC<Hprops> = ({ content }) => {
       </div>
       <div className="nav-text">{content.title}</div>
     </NavLink>
+  )
+}
+
+const UserArea: React.FC = () => {
+  return (
+    <div className="playlist-box">
+      <h3>hello</h3>
+    </div>
   )
 }
 
