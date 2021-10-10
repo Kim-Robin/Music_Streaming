@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 import HOME from '../Images/home.png'
 import SEARCH from '../Images/search.png'
+import LIBRARY from '../Images/library.png'
 import LOGO from '../Images/react.png'
 
 interface Hprops {
@@ -31,7 +32,7 @@ const Header: React.FC = () => {
 
   const contentLibrary = {
     link: '/library',
-    imgSrc: SEARCH,
+    imgSrc: LIBRARY,
     imgAlt: 'library icon',
     title: 'Library',
   }

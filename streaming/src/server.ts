@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/music", (req, res) => {
-    console.log(req.headers);
+    //console.log(req.headers);
     const range: string | undefined = req.headers.range;
     if(range === undefined){
         res.status(400).send("Requires Range header");
@@ -22,7 +22,7 @@ app.get("/music", (req, res) => {
         const musicPath = temp;
         const musicSize = fs.statSync(musicPath).size;
 
-        console.log(musicSize);
+        //console.log(musicSize);
 
         const CHUNK_SIZE = 10 ** 6; // 1mb
        
@@ -85,6 +85,10 @@ app.get("/music/:artist/:song",(req,res) =>{
         res.writeHead(206, headers);
 
         let musicStream = fs.createReadStream(location,{start, end});
+        
+        console.log("hello musicStream")
+        console.log("musciStream: ", musicStream)
+        console.log(Array.isArray(musicStream) )
 
         musicStream.pipe(res);
     }

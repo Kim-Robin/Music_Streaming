@@ -94,10 +94,23 @@ grid-template-areas:
   width: 100%;
 }
 
+.main-box-contents {
+  margin-left: 31px;
+  margin-right: 31px;
+}
+
 /*footer styling*/
 .music-player-box {
   background-color: rgba(23, 234, 78, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-area: music-player-bar;
   width: 100%;
   z-index: 4;
+}
+
+.music-player-box-contents {
+  flex: 1;
+  text-align: center;
 }
