@@ -12,16 +12,16 @@ import Header from './BaseComponent/Header'
 import Footer from './BaseComponent/Footer'
 
 export const App = () => {
-  return (
-    <div className="project-wrapper">
-      <Router>
-        <Header />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/search" exact component={Search} />
-        </Switch>
-        <Footer />
-      </Router>
-    </div>
-  )
+    return (
+        <div className="project-wrapper">
+            <Router>
+                <Header />
+                <Switch>
+                    <Route path="/" exact component={Home} />
+                    <Route path="/search" exact component={Search} />
+                </Switch>
+                <Footer />
+            </Router>
+        </div>
+    )
 }

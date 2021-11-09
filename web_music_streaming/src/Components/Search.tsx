@@ -1,11 +1,11 @@
 import React from 'react'
 
 const Search = () => {
-  return (
-    <div className="main-box">
-      <h1>Search</h1>
-    </div>
-  )
+    return (
+        <div className="main-box">
+            <h1>Search</h1>
+        </div>
+    )
 }
 
 export default Search
