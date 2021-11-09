@@ -91,12 +91,31 @@ grid-template-areas:
 /*main view styling*/
 .main-box {
     grid-area: main-view;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/*
+.main-box-contents, .main-box-contents-heading{
+    padding-left: 31px;
+    padding-right: 31px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+*/
+
+.main-box-contents-heading {
+    min-height: 55px;
+    max-height: 55px;
     width: 100%;
+    background-color: rgba(9, 9, 9, 1);
 }
 
 .main-box-contents {
-    margin-left: 31px;
-    margin-right: 31px;
+    flex: 1;
+    width: 100%;
+    background-color: rgba(19, 19, 19, 1);
 }
 
 /*footer styling*/
