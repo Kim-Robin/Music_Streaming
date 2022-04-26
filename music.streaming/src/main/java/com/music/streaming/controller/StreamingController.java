@@ -20,9 +20,15 @@ public class StreamingController{
     private StreamingService streamingService;
 
 
-    @GetMapping(value = "video/{title}", produces = "vidoe/mp4")
+    @GetMapping(value = "/video/{title}", produces = "video/mp4")
     public Mono<Resource> getVideos(@PathVariable String title, @RequestHeader String range){
-        System.out.println("range in bytes() : " + range);
+        System.out.println("VIDEO range in bytes() : " + range);
         return streamingService.getVideo(title);
+    }
+
+    @GetMapping(value = "/audio/{title}", produces = "audio/mpeg")
+    public Mono<Resource> getMusic(@PathVariable String title, @RequestHeader String range){
+        System.out.println("MUSIC range in bytes() : " + range);
+        return streamingService.getMusic(title);
     }
 }

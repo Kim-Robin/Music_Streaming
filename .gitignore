@@ -9,6 +9,8 @@ streaming/music/*
 streaming/package-lock.json
 streaming/node_modules
 
+music.streaming/src/main/resources/music/*
+music.streaming/src/main/resources/video/*
 
 
 ios_music_streaming/.swiftpm

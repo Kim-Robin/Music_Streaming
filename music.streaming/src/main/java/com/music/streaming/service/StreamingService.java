@@ -11,9 +11,9 @@ import reactor.core.publisher.Mono;
 @Service
 public class StreamingService{
 
-    private static final String VIDEO_FORMAT = "classpath:videos/%s.mp4";
+    private static final String VIDEO_FORMAT = "classpath:video/%s.mp4";
 
-    private static final String MUSIC_FORMAT = "classpath:videos/%s.mp3";
+    private static final String MUSIC_FORMAT = "classpath:music/%s.mp3";
 
     @Autowired
     private ResourceLoader resourceLoader;
@@ -21,5 +21,10 @@ public class StreamingService{
     public Mono<Resource> getVideo(String title){
         return Mono.fromSupplier(() -> resourceLoader.
                 getResource(String.format(VIDEO_FORMAT, title)));
+    }
+
+    public Mono<Resource> getMusic(String title){
+        return Mono.fromSupplier(() -> resourceLoader.
+                getResource(String.format(MUSIC_FORMAT, title)));
     }
 }
