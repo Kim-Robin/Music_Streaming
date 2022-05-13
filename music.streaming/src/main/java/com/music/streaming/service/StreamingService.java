@@ -15,6 +15,8 @@ public class StreamingService{
 
     private static final String MUSIC_FORMAT = "classpath:music/%s.mp3";
 
+    private static final String MUSIC_ARTIST_FORMAT = "classpath:music/%s/%s.mp3";
+
     @Autowired
     private ResourceLoader resourceLoader;
 
@@ -26,5 +28,10 @@ public class StreamingService{
     public Mono<Resource> getMusic(String title){
         return Mono.fromSupplier(() -> resourceLoader.
                 getResource(String.format(MUSIC_FORMAT, title)));
+    }
+
+    public Mono<Resource> getMusic(String artist, String title){
+        return Mono.fromSupplier(() -> resourceLoader.
+                getResource(String.format(MUSIC_ARTIST_FORMAT,artist, title)));
     }
 }

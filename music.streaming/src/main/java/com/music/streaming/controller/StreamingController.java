@@ -31,4 +31,10 @@ public class StreamingController{
         System.out.println("MUSIC range in bytes() : " + range);
         return streamingService.getMusic(title);
     }
+
+    @GetMapping(value = "/audio/{artist}/{title}", produces = "audio/mpeg")
+    public Mono<Resource> getMusicArtist(@PathVariable String artist, @PathVariable String title, @RequestHeader String range){
+        System.out.println("MUSIC range in bytes() : " + range);
+        return streamingService.getMusic(artist, title);
+    }
 }
